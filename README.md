@@ -25,4 +25,3 @@ git config init.defaultBranch main // percakton default main branch
 git remote -v //shikon me cilin respitory eshte i lidhur
 
 git remote set-url origin linkuirespitory / / e i ndryshu respitory
-g
