@@ -1,0 +1,428 @@
+
+.places-page .locations-panel {
+  display: block;
+  min-height: 0;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  overflow: hidden;
+  border: 1px solid #c8d6f2;
+  border-radius: 24px;
+  background: linear-gradient(
+    135deg,
+    #eff4ff 0%,
+    #f9fbff 48%,
+    #f0faf8 100%
+  );
+  text-align: left;
+  box-shadow: 0 22px 50px #163b7812;
+}
+
+.places-page .locations-empty {
+  display: grid;
+  min-height: 215px;
+  place-items: center;
+  align-content: center;
+  text-align: center;
+}
+
+.places-page .locations-empty .panel-icon {
+  margin-bottom: 0.9rem;
+  box-shadow: 0 12px 24px #356df229;
+}
+
+.places-page .locations-empty p{
+  max-width: 390px;
+}
+
+.places-page .locations-content {
+  width: 100%;
+}
+
+.places-page .locations-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.25rem 0.35rem 1.4rem;
+}
+
+.places-page .locations-heading h2 {
+  margin: 0;
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  letter-spacing: -0.045em;
+}
+
+.places-page .locations-heading p {
+  margin: 0.35rem 0 0;
+}
+
+.places-page .locations-kicker {
+  margin: 0 0 0.35rem;
+  color: var(--blue);
+  font-size: 0.67rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+}
+
+/* Butoni i mbylljes */
+
+.places-page .close-locations {
+  flex-shrink: 0;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid #d7e0ef;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 800;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.places-page .close-locations:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+  transform: translateY(-1px);
+}
+
+/* LISTA SIPËR, HARTA POSHTË */
+
+.places-page .directory-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  width: 100%;
+}
+
+/* Kartelat e marketeve */
+
+.places-page .location-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 1rem;
+  width: 100%;
+  max-height: none;
+  padding: 0;
+  overflow: visible;
+}
+
+/* Çdo kartelë ka rreshtim të njëjtë */
+
+.places-page .location-card{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  min-width: 0;
+  min-height: 225px;
+  padding: 1.1rem;
+  border: 1px solid #dbe4f5;
+  border-radius: 16px;
+  background: #fff;
+  color: var(--ink);
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  box-shadow: 0 7px 18px #1e386209;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.places-page .location-card:hover {
+  border-color: #9db8fb;
+  transform: translateY(-3px);
+}
+
+.places-page .location-card-active {
+  border-color: var(--blue);
+  box-shadow: 0 10px 24px #356df226;
+}
+
+.places-page .location-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.places-page .place-type,
+.places-page .rating {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 0.28rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.67rem;
+  font-weight: 900;
+}
+
+.places-page .place-type {
+  background: #eaf0ff;
+  color: var(--blue);
+}
+
+.places-page .rating {
+  background: #fff6d9;
+  color: #9b6a00;
+}
+
+.places-page .location-card h3{
+  margin: 0.8rem 0 0.35rem;
+  font-size: 1rem;
+  line-height: 1.4;
+  letter-spacing: -0.025em;
+}
+
+.places-page .place-address {
+  margin: 0;
+  color: #68778d;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.places-page .place-description {
+  margin: 0.7rem 0 1rem;
+  color: #506077;
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+/* Butoni vendoset gjithmonë në fund të kartelës */
+
+.places-page .select-place {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 0.8rem;
+  color: var(--blue);
+  font-size: 0.74rem;
+  font-weight: 900;
+}
+
+.places-page .location-card-active .select-place {
+  color: #174cc8;
+}
+
+/* HARTA: E CENTRUAR DHE ME GJERËSI TË PLOTË */
+
+.places-page .map-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1000px;
+  min-width: 0;
+  margin-inline: auto;
+  overflow: hidden;
+  border: 1px solid #dbe4f5;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 12px 28px #1e38620d;
+}
+
+.places-page .map-frame {
+  position: relative;
+  width: 100%;
+  height: 360px;
+  min-height: 0;
+  overflow: hidden;
+  background: #dce8dc;
+}
+
+.places-page .map-frame::after {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--blue), #55c8ac);
+  content: "";
+  pointer-events: none;
+}
+
+.places-page .map-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  border: 0;
+  filter: saturate(0.9) contrast(1.02);
+}
+
+/* Informacionet e marketit të zgjedhur */
+
+.places-page .map-details {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+  padding: 1.3rem 1.4rem 1.4rem;
+}
+
+.places-page .map-details .place-type {
+  margin-bottom: 0.1rem;
+}
+
+.places-page .map-details h3{
+  margin: 0.55rem 0 0.35rem;
+  font-size: 1.15rem;
+  line-height: 1.4;
+  letter-spacing: -0.025em;
+}
+
+.places-page .map-details p {
+  margin: 0;
+  color: #68778d;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+/* Orari dhe telefoni */
+
+.places-page .detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  padding-top: 0.2rem;
+}
+
+.places-page .detail-grid span {
+  display: grid;
+  align-content: start;
+  gap: 0.3rem;
+  min-width: 0;
+  padding: 0.9rem;
+  border: 1px solid #e4ebf7;
+  border-radius: 12px;
+  background: #f8faff;
+  color: #5f7088;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.places-page .detail-grid b {
+  color: #98a4b5;
+  font-size: 0.63rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Hapja e hartës në Google Maps */
+
+.places-page .maps-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 0.1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  background: var(--blue);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-decoration: none;
+  box-shadow: 0 10px 18px #356df22b;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.places-page .maps-link:hover {
+  box-shadow: 0 13px 23px #356df242;
+  transform: translateY(-2px);
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .places-page .locations-panel {
+    padding: 1.1rem;
+  }
+
+  .places-page .location-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .places-page .map-frame {
+    height: 320px;
+  }
+}
+
+/* TELEFON */
+
+@media (max-width: 560px) {
+  .places-page .locations-panel {
+    padding: 0.8rem;
+    border-radius: 18px;
+  }
+
+  .places-page .locations-heading {
+    gap: 0.6rem;
+    padding: 0.35rem 0.15rem 1rem;
+  }
+
+  .places-page .locations-heading h2{
+    overflow-wrap: anywhere;
+  }
+
+  .places-page .locations-heading p{
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .places-page .close-locations {
+    padding: 0.45rem 0.6rem;
+  }
+
+  .places-page .location-list{
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.8rem;
+  }
+
+  .places-page .location-card {
+    min-height: 0;
+    padding: 1rem;
+  }
+
+  .places-page .map-frame {
+    height: 270px;
+  }
+
+  .places-page .map-details {
+    padding: 1rem;
+  }
+
+  .places-page .detail-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem;
+  }
+
+  .places-page .detail-grid span {
+    padding: 0.7rem;
+    font-size: 0.73rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .places-page .locations-heading {
+    flex-direction: column;
+  }
+
+  .places-page .detail-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
