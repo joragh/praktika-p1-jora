@@ -9,6 +9,7 @@ export default function Home() {
           <Link className="nav-link active" href="/">Home</Link>
           <Link className="nav-link" href="/places">Places</Link>
           <a className="nav-link" href="#about">About</a>
+          <Link className="nav-link account-link" href="/auth">Log in</Link>
         </nav>
       </header>
       <section className="hero" aria-labelledby="hero-title">

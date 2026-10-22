@@ -1,8 +1,10 @@
 
 "use client";
+/* eslint-disable react/no-unescaped-entities */
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { getBusinesses } from "../lib/owner-store";
 import "./places.css";
 
 const categories = [
@@ -29,6 +31,7 @@ type Place = {
   mapsQuery: string;
   rating: string;
   description: string;
+  promoted?: boolean;
 };
 
 // Nga 9 vendmbajtëse për secilën kategori. Zëvendësoji me lokacionet reale.
@@ -323,6 +326,27 @@ export default function PlacesPage() {
   const [selected, setSelected] = useState<string | null>(null);
   const [selectedPlace, setSelectedPlace] = useState<Place | null>(null);
   const [query, setQuery] = useState("");
+  const [ownerPlaces] = useState<Place[]>(() =>
+      getBusinesses().map((business) => ({
+        name: business.name,
+        category:
+          business.category === "Market" ? categories[0].name :
+          business.category === "Restorant" ? categories[1].name :
+          business.category === "Kafene" ? categories[2].name :
+          business.category === "Arsim" ? categories[3].name :
+          business.category === "Shendetesia" ? categories[4].name :
+          business.category === "Sport dhe rekreacion" ? categories[7].name :
+          categories[categories.length - 1].name,
+        type: business.category,
+        address: business.address,
+        hours: business.hours || "Kontaktoni biznesin",
+        phone: business.phone,
+        mapsQuery: business.mapsUrl,
+        rating: "I ri",
+        description: business.description,
+        promoted: business.premium,
+      }))
+  );
 
   const shownCategories = useMemo(
     () =>
@@ -332,7 +356,7 @@ export default function PlacesPage() {
     [query]
   );
 
-  const selectedPlaces = places.filter(
+  const selectedPlaces = [...places, ...ownerPlaces].filter(
     (place) => place.category === selected
   );
 
@@ -340,7 +364,7 @@ export default function PlacesPage() {
     setSelected(category);
 
     const firstPlace =
-      places.find((place) => place.category === category) ?? null;
+      [...places, ...ownerPlaces].find((place) => place.category === category) ?? null;
 
     setSelectedPlace(firstPlace);
   }
@@ -495,7 +519,7 @@ export default function PlacesPage() {
                       aria-pressed={selectedPlace.name === place.name}
                     >
                       <div className="location-card-top">
-                        <span className="place-type">{place.type}</span>
+                        <span className="place-type">{place.promoted ? "★ REKLAMË" : place.type}</span>
 
                         <span className="rating">
                           ★ {place.rating}
@@ -538,7 +562,7 @@ export default function PlacesPage() {
                   <div className="map-details">
                     <div>
                       <span className="place-type">
-                        {selectedPlace.type}
+                        {selectedPlace.promoted ? "★ BIZNES PREMIUM" : selectedPlace.type}
                       </span>
 
                       <h3>{selectedPlace.name}</h3>
@@ -560,9 +584,7 @@ export default function PlacesPage() {
 
                     <a
                       className="maps-link"
-                      href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-                        selectedPlace.mapsQuery
-                      )}`}
+                      href={selectedPlace.mapsQuery.startsWith("http") ? selectedPlace.mapsQuery : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(selectedPlace.mapsQuery)}`}
                       target="_blank"
                       rel="noreferrer"
                     >

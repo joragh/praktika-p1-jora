@@ -1,0 +1,16 @@
+export type Owner = { id: string; firstName: string; lastName: string; email: string; password: string; premium: boolean };
+export type Business = { id: string; ownerId: string; name: string; category: string; mapsUrl: string; phone: string; address: string; description: string; hours: string; website: string; premium: boolean; createdAt: string };
+const OWNERS = "city-guide-owners";
+const BUSINESSES = "city-guide-businesses";
+const SESSION = "city-guide-session";
+const read = <T,>(key: string): T[] => { if (typeof window === "undefined") return []; try { return JSON.parse(localStorage.getItem(key) ?? "[]") as T[]; } catch { return []; } };
+const write = <T,>(key: string, value: T[]) => localStorage.setItem(key, JSON.stringify(value));
+export const getOwners = () => read<Owner>(OWNERS);
+export const getBusinesses = () => read<Business>(BUSINESSES);
+export const getCurrentOwner = () => { if (typeof window === "undefined") return null; const id = localStorage.getItem(SESSION); return getOwners().find((owner) => owner.id === id) ?? null; };
+export const setSession = (id: string) => localStorage.setItem(SESSION, id);
+export const logout = () => localStorage.removeItem(SESSION);
+export const newId = () => crypto.randomUUID();
+export const saveOwner = (owner: Owner) => { const owners = getOwners(); const index = owners.findIndex((item) => item.id === owner.id); if (index === -1) owners.push(owner); else owners[index] = owner; write(OWNERS, owners); };
+export const saveBusiness = (business: Business) => { const businesses = getBusinesses(); const index = businesses.findIndex((item) => item.id === business.id); if (index === -1) businesses.push(business); else businesses[index] = business; write(BUSINESSES, businesses); };
+export const removeBusiness = (id: string) => write(BUSINESSES, getBusinesses().filter((item) => item.id !== id));
