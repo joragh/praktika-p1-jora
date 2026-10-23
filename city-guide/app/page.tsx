@@ -21,10 +21,9 @@ export default function Home() {
           <p className="subtitle">Një udhëzues i përzgjedhur me kujdes për vendet që ta bëjnë qytetin të ndihet si shtëpi.</p>
           <div className="hero-actions">
             <Link className="primary-button" href="/places">Eksploro vendet <span aria-hidden="true">→</span></Link>
-            <a className="text-button" href="#about">Si funksionon <span aria-hidden="true">↗</span></a>
           </div>
         </div>
-        <div className="hero-stats" aria-label="Guide highlights"><div><strong>9</strong><span>kategori</span></div><div><strong>∞</strong><span>mundësi</span></div><div><strong>1.</strong><span>udhëzues qyteti</span></div></div>
+        
       </section>
       <section className="home-about" id="about"><p className="eyebrow"><span /> Zbulo me lehtësi</p><p>Shfleto vendet sipas kategorive dhe gjej saktësisht atë që të nevojitet, kurdo që të të nevojitet.</p></section>
     </main>

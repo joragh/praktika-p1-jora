@@ -3,11 +3,12 @@
 /* eslint-disable react/no-unescaped-entities */
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { BUSINESS_CATEGORIES } from "../lib/categories";
 import { getBusinesses } from "../lib/owner-store";
 import "./places.css";
 
-const categories = [
+const categoryVisuals = [
   { name: "Markete dhe dyqane ushqimore", icon: "⌂" },
   { name: "Restorante dhe ushqim i shpejtë", icon: "✦" },
   { name: "Kafene dhe ëmbëltore", icon: "☕" },
@@ -18,6 +19,7 @@ const categories = [
   { name: "Sport, kulturë dhe rekreacion", icon: "◉" },
   { name: "Shërbime të tjera", icon: "⋯" },
 ] as const;
+const categories = BUSINESS_CATEGORIES.map((name, index) => ({ name, icon: categoryVisuals[index].icon }));
 
 type Category = (typeof categories)[number]["name"];
 
@@ -326,17 +328,10 @@ export default function PlacesPage() {
   const [selected, setSelected] = useState<string | null>(null);
   const [selectedPlace, setSelectedPlace] = useState<Place | null>(null);
   const [query, setQuery] = useState("");
-  const [ownerPlaces] = useState<Place[]>(() =>
-      getBusinesses().map((business) => ({
+  const [ownerPlaces, setOwnerPlaces] = useState<Place[]>([]);
+  useEffect(() => { getBusinesses().then((businesses) => setOwnerPlaces(businesses.map((business) => ({
         name: business.name,
-        category:
-          business.category === "Market" ? categories[0].name :
-          business.category === "Restorant" ? categories[1].name :
-          business.category === "Kafene" ? categories[2].name :
-          business.category === "Arsim" ? categories[3].name :
-          business.category === "Shendetesia" ? categories[4].name :
-          business.category === "Sport dhe rekreacion" ? categories[7].name :
-          categories[categories.length - 1].name,
+        category: business.category as Category,
         type: business.category,
         address: business.address,
         hours: business.hours || "Kontaktoni biznesin",
@@ -345,8 +340,7 @@ export default function PlacesPage() {
         rating: "I ri",
         description: business.description,
         promoted: business.premium,
-      }))
-  );
+      })))).catch(() => setOwnerPlaces([])); }, []);
 
   const shownCategories = useMemo(
     () =>
