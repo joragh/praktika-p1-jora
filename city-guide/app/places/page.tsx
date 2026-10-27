@@ -283,7 +283,7 @@ const places: Place[] = [
     category: "Restorante dhe ushqim i shpejtë",
     type: "Fast food",
     address: "78 Skenderbeu",
-    hours: "Orë e hapjës nuk janë publikuar",
+    hours: "Orët e hapjës nuk janë publikuar",
     phone: "Numri i telefonit nuk është i publikuar",
     mapsQuery: "https://maps.app.goo.gl/Tjufi2sHp4UFtsJSA",
     rating: "3.7",
@@ -323,20 +323,221 @@ const places: Place[] = [
     description: "Restoranti Anija ofron një ambient të këndshëm dhe një përzgjedhje ushqimesh të shijshme, duke u bërë një vend i preferuar për dreka, darka dhe takime me familjen apo miqtë.",
   },
    {
-    name: "Restorant Anija",
+    name: "Sach Coffee",
     category: "Kafene dhe ëmbëltore",
+    type: "Coffee shop",
+    address: "Komandant Kumanova",
+    hours: "Orët e hapjës nuk janë publikuar",
+    phone: "Numri i telefonit nuk është i publikuar",
+    mapsQuery: "https://maps.app.goo.gl/dQe8xipHWQHDoD9C8",
+    rating: "3.9",
+    description: "Sach Kafe ofron kafe aromatike dhe pije të ndryshme në një ambient të këndshëm e relaksues, ku mund të kaloni momente të bukura me shoqërinë ose të shijoni një pushim gjatë ditës.",
+  },
+  {
+    name: "Room Cafe",
+    category: "Kafene dhe ëmbëltore",
+    type: "Bar",
+    address: "Rr Sheshi Adem Jashari",
+    hours: "07:00 – 23:00",
+    phone: "+383 49 288 885",
+    mapsQuery: "https://maps.app.goo.gl/KYdyiq6Hch4Lu7My5",
+    rating: "No rating",
+    description: "Room Cafe ofron kafe të shijshme dhe pije të ndryshme në një ambient modern e të rehatshëm, ku mund të kaloni kohë të këndshme me shoqërinë dhe të shijoni një pushim nga rutina e përditshme.",
+  },
+  {
+    name: "Le Bon",
+    category: "Kafene dhe ëmbëltore",
+    type: "Cafe",
+    address: "Rr. Hamez Jashari",
+    hours: "07:00 – 23:00",
+    phone: "+383 44 510 805",
+    mapsQuery: "https://maps.app.goo.gl/abgQniLPSshETxpw5",
+    rating: "4.9",
+    description: "Le Bon është një kafene me ambient modern dhe atmosferë të këndshme, ku mund të shijoni pije të ndryshme dhe të kaloni kohë me shoqërinë.",
+  },
+  {
+    name: "Nana e Bakllava",
+    category: "Kafene dhe ëmbëltore",
+    type: "Bakllavë dhe ëmbëltore",
+    address: "Rr. Shqipëria Lidhja e Prizerenit",
+    hours: "10:00 – 23:00",
+    phone: "+383 45 102 486",
+    mapsQuery: "https://maps.app.goo.gl/3vnL7MCGBTqEJ3y36",
+    rating: "5.0",
+    description: "Nana e Bakllava ofron një përzgjedhje të bukura bakllavash dhe ëmbëltoreve në një ambient të këndshëm, ku mund të shijoni ushqim të mirë me familjen dhe shoqërinë.",
+  },
+  {
+    name: "Ice Caffe Centrum",
+    category: "Kafene dhe ëmbëltore",
+    type: "Cafe",
+    address: "Rr. Skenderbeu",
+    hours: "08:00 – 21:00",
+    phone: "+383 44 876 356",
+    mapsQuery: "https://maps.app.goo.gl/oxnob8uHHVtz7sbB6",
+    rating: "5.0",
+    description: "Ice Caffe Centrum ofron kafe të shijshme dhe pije të ndryshme në një ambient modern e të rehatshëm, ku mund të kaloni kohë të këndshme me shoqërinë dhe të shijoni një pushim nga rutina e përditshme.",
+  },
+  {
+    name: "Home Restorant",
+    category: "Kafene dhe ëmbëltore",
+    type: "Kafe dhe restorant",
+    address: "Nje Maji",
+    hours: "07:00 – 23:00",
+    phone: "+383 4 911 15 72",
+    mapsQuery: "https://maps.app.goo.gl/J7zgPEkmWJW4gtJj7",
+    rating: "4.3",
+    description: "Home Restorant ofron ushqim dhe kafe të mirë dhe pije të shijshme në një ambient të këndshëm, ku mund të kaloni kohë të këndshme me familjen dhe shoqërinë.",
+  },
+  {
+    name: "n'Lagje Restorant",
+    category: "Kafene dhe ëmbëltore",
+    type: "Kafe dhe restorant",
+    address: "Haxhi Klecka",
+    hours: "07:00 – 23:00",
+    phone: "+383 49 883 554",
+    mapsQuery: "https://maps.app.goo.gl/wxNPoFMFXyEDxLqp7",
+    rating: "4.9",
+    description: "N’Lagje është një kafene ku mund të shijoni pije të ndryshme në një ambient të rehatshëm dhe të kaloni kohë të këndshme me shoqërinë.",
+  },
+  {
+    name: "eL Caffe",
+    category: "Kafene dhe ëmbëltore",
+    type: "Bar",
+    address: "25 Fatmir Reqica",
+    hours: "Orët e hapjës nuk janë publikuar",
+    phone: "Numri i telefonit nuk është i publikuar",
+    mapsQuery: "https://maps.app.goo.gl/7gzESQnEsyr4hYGv9",
+    rating: "5.0",
+    description: "eL Caffe ofron një përzgjedhje pijesh të ndryshme në një ambient të këndshëm dhe mikpritës, ku mund të shijoni një pushim të qetë dhe të kaloni kohë me shoqërinë.",
+  },
+  {
+    name: "Premium Lounge Bar",
+    category: "Kafene dhe ëmbëltore",
+    type: "Bar",
+    address: "Adem Jashari 64",
+    hours: "08:00 – 23:00",
+    phone: "Numri i telefonit nuk është i publikuar",
+    mapsQuery: "https://maps.app.goo.gl/ACAQcE7RL3DVhX5i8",
+    rating: "4.5",
+    description: "Premium Lounge Bar ofron pije të ndryshme në një ambient modern dhe elegant, ku mund të relaksoheni, të dëgjoni muzikë dhe të kaloni mbrëmje të këndshme me shoqërinë.",
+  },
+  {
+    name: "Shkolla ",
+    category: "Arsim",
     type: "",
     address: "",
-    hours: "07:00 – 23:45",
-    phone: "Numri i telefonit nuk është i publikuar",
+    hours: "08:00 – 23:00",
+    phone: "",
     mapsQuery: "",
     rating: "",
     description: "",
-  }
+  },
+  {
+    name: "Premium Lounge Bar",
+    category: "Arsim",
+    type: "",
+    address: "",
+    hours: "08:00 – 23:00",
+    phone: "",
+    mapsQuery: "",
+    rating: "",
+    description: "",
+  },
+  {
+    name: "Premium Lounge Bar",
+    category: "Arsim",
+    type: "",
+    address: "",
+    hours: "08:00 – 23:00",
+    phone: "",
+    mapsQuery: "",
+    rating: "",
+    description: "",
+  },
+  {
+    name: "Premium Lounge Bar",
+    category: "Arsim",
+    type: "",
+    address: "",
+    hours: "08:00 – 23:00",
+    phone: "",
+    mapsQuery: "",
+    rating: "",
+    description: "",
+  },
+  {
+    name: "Premium Lounge Bar",
+    category: "Arsim",
+    type: "",
+    address: "",
+    hours: "08:00 – 23:00",
+    phone: "",
+    mapsQuery: "",
+    rating: "",
+    description: "",
+  },
+  {
+    name: "Premium Lounge Bar",
+    category: "Arsim",
+    type: "",
+    address: "",
+    hours: "08:00 – 23:00",
+    phone: "",
+    mapsQuery: "",
+    rating: "",
+    description: "",
+  },
+  {
+    name: "Premium Lounge Bar",
+    category: "Arsim",
+    type: "",
+    address: "",
+    hours: "08:00 – 23:00",
+    phone: "",
+    mapsQuery: "",
+    rating: "",
+    description: "",
+  },
+  {
+    name: "Premium Lounge Bar",
+    category: "Arsim",
+    type: "",
+    address: "",
+    hours: "08:00 – 23:00",
+    phone: "",
+    mapsQuery: "",
+    rating: "",
+    description: "",
+  },
+  {
+    name: "Premium Lounge Bar",
+    category: "Arsim",
+    type: "",
+    address: "",
+    hours: "08:00 – 23:00",
+    phone: "",
+    mapsQuery: "",
+    rating: "",
+    description: "",
+  },
 ];
 
+function getPlacesForCategory(category: Category, ownerPlaces: Place[]) {
+  const categoryPlaces = [...places, ...ownerPlaces].filter(
+    (place) =>
+      place.category === category &&
+      place.name.trim() &&
+      place.address.trim() &&
+      place.mapsQuery.trim()
+  );
+
+  return categoryPlaces.length
+    ? categoryPlaces
+    : placeholderPlaces.filter((place) => place.category === category);
+}
+
 export default function PlacesPage() {
-  const [selected, setSelected] = useState<string | null>(null);
+  const [selected, setSelected] = useState<Category | null>(null);
   const [selectedPlace, setSelectedPlace] = useState<Place | null>(null);
   const [query, setQuery] = useState("");
   const [ownerPlaces, setOwnerPlaces] = useState<Place[]>([]);
@@ -361,17 +562,17 @@ export default function PlacesPage() {
     [query]
   );
 
-  const selectedPlaces = [...places, ...ownerPlaces].filter(
-    (place) => place.category === selected
-  );
+  const selectedPlaces = selected
+    ? getPlacesForCategory(selected, ownerPlaces)
+    : [];
+  const activePlace =
+    selectedPlaces.find((place) => place === selectedPlace) ??
+    selectedPlaces[0] ??
+    null;
 
-  function chooseCategory(category: string) {
+  function chooseCategory(category: Category) {
     setSelected(category);
-
-    const firstPlace =
-      [...places, ...ownerPlaces].find((place) => place.category === category) ?? null;
-
-    setSelectedPlace(firstPlace);
+    setSelectedPlace(getPlacesForCategory(category, ownerPlaces)[0] ?? null);
   }
 
   function closeLocations() {
@@ -486,7 +687,7 @@ export default function PlacesPage() {
                 eksploruar lokacionet shembull dhe hartat e tyre.
               </p>
             </div>
-          ) : selectedPlaces.length && selectedPlace ? (
+          ) : selectedPlaces.length && activePlace ? (
             <div className="locations-content">
               <div className="locations-heading">
                 <div>
@@ -514,14 +715,14 @@ export default function PlacesPage() {
                   {selectedPlaces.map((place) => (
                     <button
                       className={`location-card ${
-                        selectedPlace.name === place.name
+                        activePlace === place
                           ? "location-card-active"
                           : ""
                       }`}
                       type="button"
                       onClick={() => setSelectedPlace(place)}
                       key={place.name}
-                      aria-pressed={selectedPlace.name === place.name}
+                      aria-pressed={activePlace === place}
                     >
                       <div className="location-card-top">
                         <span className="place-type">{place.promoted ? "★ REKLAMË" : place.type}</span>
@@ -551,16 +752,16 @@ export default function PlacesPage() {
 
                 <aside
                   className="map-card"
-                  aria-label={`Harta për ${selectedPlace.name}`}
+                  aria-label={`Harta për ${activePlace.name}`}
                 >
                   <div className="map-frame">
                    <iframe
-                    title={`Harta e Google për ${selectedPlace.name}`}
+                    title={`Harta e Google për ${activePlace.name}`}
                       src={
                       `https://maps.google.com/maps?q=${encodeURIComponent(
-      selectedPlace.mapsQuery.startsWith("http")
-        ? selectedPlace.address + ", Lipjan, Kosovo"
-        : selectedPlace.mapsQuery
+      activePlace.mapsQuery.startsWith("http")
+        ? activePlace.address + ", Lipjan, Kosovo"
+        : activePlace.mapsQuery
     )}&z=16&output=embed`
   }
   loading="lazy"
@@ -571,29 +772,29 @@ export default function PlacesPage() {
                   <div className="map-details">
                     <div>
                       <span className="place-type">
-                        {selectedPlace.promoted ? "★ BIZNES PREMIUM" : selectedPlace.type}
+                        {activePlace.promoted ? "★ BIZNES PREMIUM" : activePlace.type}
                       </span>
 
-                      <h3>{selectedPlace.name}</h3>
+                      <h3>{activePlace.name}</h3>
 
-                      <p>⌖ {selectedPlace.address}</p>
+                      <p>⌖ {activePlace.address}</p>
                     </div>
 
                     <div className="detail-grid">
                       <span>
                         <b>Orari</b>
-                        {selectedPlace.hours}
+                        {activePlace.hours}
                       </span>
 
                       <span>
                         <b>Telefoni</b>
-                        {selectedPlace.phone}
+                        {activePlace.phone}
                       </span>
                     </div>
 
                     <a
                       className="maps-link"
-                      href={selectedPlace.mapsQuery.startsWith("http") ? selectedPlace.mapsQuery : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(selectedPlace.mapsQuery)}`}
+                      href={activePlace.mapsQuery.startsWith("http") ? activePlace.mapsQuery : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(activePlace.mapsQuery)}`}
                       target="_blank"
                       rel="noreferrer"
                     >
