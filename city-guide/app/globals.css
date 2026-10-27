@@ -1,13 +1,6 @@
 @import "tailwindcss";
 
-:root { --ink: #12223b; --muted: #63718a; --blue: #356df2; --paper: #f7f9ff; --line: #dbe3f3; }
-
-@theme inline {
-  --color-background: var(--paper);
-  --color-foreground: var(--ink);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+:root { --ink: #12223b; --muted: #63718a; --blue: #356df2; --paper: #f7f9ff; --line: #dbe3f3; --color-background: var(--paper); --color-foreground: var(--ink); --font-sans: var(--font-geist-sans); --font-mono: var(--font-geist-mono); }
 
 * { box-sizing: border-box; } html { scroll-behavior: smooth; } body { margin: 0; background: var(--paper); color: var(--ink); font-family: Arial, Helvetica, sans-serif; } a { color: inherit; } .home-page,.places-page { min-height: 100vh; overflow: hidden; }
 .site-header { display:flex; align-items:center; justify-content:space-between; max-width:1180px; margin:0 auto; padding:1.35rem 2rem; position:relative; z-index:3; }.brand { display:inline-flex; align-items:center; gap:.65rem; color:var(--ink); font-size:1.05rem; font-weight:800; letter-spacing:-.035em; text-decoration:none; }.brand-mark { display:grid; width:30px; height:30px; place-items:center; border-radius:9px; background:var(--blue); color:#fff; font-size:.88rem; box-shadow:0 7px 16px #356df24a; } nav { display:flex; gap:1.7rem; }.nav-link { color:var(--muted); font-size:.91rem; font-weight:700; text-decoration:none; transition:color .2s ease; }.nav-link:hover,.nav-link:focus-visible,.nav-link.active { color:var(--blue); }

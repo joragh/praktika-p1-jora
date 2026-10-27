@@ -112,100 +112,101 @@ const placeholderPlaces: Place[] = placeholderCategories.flatMap((place) =>
 // Të dhëna shembull: këto mund t'i zëvendësosh me biznese reale.
 const places: Place[] = [
   {
-    name: "FreshMart Qendra",
+    name: "Viva Fresh Store",
     category: "Markete dhe dyqane ushqimore",
     type: "Market",
-    address: "Rr. Dëshmorët e Kombit, Qendër",
-    hours: "07:00 – 22:00",
-    phone: "+383 44 000 101",
-    mapsQuery: "FreshMart Qendra Pristina",
-    rating: "4.8",
+    address: "Rr Komandant Kumanova",
+    hours: "07:00 – 23:00",
+    phone: "Numri i telefonit nuk është i publikuar",
+    mapsQuery: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1039.5699359567457!2d21.1182781216927!3d42.52666598080294!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135482f4d7af30b3%3A0xb703b8c68e6a412e!2sVFS%20-%2014%20Lipjan!5e0!3m2!1sen!2s!4v1793104143323!5m2!1sen!2s",
+    rating: "4.0",
     description:
-      "Furnizime të përditshme, fruta të freskëta dhe produkte lokale.",
+      "Viva Fresh Store ofron produkte ushqimore të freskëta dhe artikuj të nevojshëm për çdo familje, duke kombinuar cilësinë, shumëllojshmërinë dhe komoditetin në blerje.",
   },
   {
-    name: "Green Basket Market",
+    name: "Interex",
+    category: "Markete dhe dyqane ushqimore",
+    type: "Market i madhë",
+    address: "Rr. Komandant Kumanova",
+    hours: "07:00 – 23:00",
+    phone: "+383 48 160 700",
+    mapsQuery: "https://maps.app.goo.gl/KE37NsqGTGM6RfYP9",
+    rating: "4.4",
+    description:
+      "Interex është një rrjet marketesh që ofron produkte ushqimore, pije dhe artikuj të përditshëm për familje, duke u ofruar klientëve shumëllojshmëri dhe komoditet gjatë blerjeve.",
+  },
+  {
+    name: "Super Viva",
+    category: "Markete dhe dyqane ushqimore",
+    type: "Market",
+    address: "Rr. Skenderbeu",
+    hours: "08:00 – 22:00",
+    phone: "+381 38 543 038",
+    mapsQuery: "https://maps.app.goo.gl/phuLFMr3TeCKExme9",
+    rating: "4.3",
+    description:
+      "Super Viva është market që ofron produkte ushqimore, pije dhe artikuj të nevojshëm për përditshmëri, duke u mundësuar klientëve të bëjnë blerjet e tyre shpejt dhe lehtë.",
+
+  },
+  {
+    name: "ETC - Elkos Trading Center",
     category: "Markete dhe dyqane ushqimore",
     type: "Dyqan ushqimor",
-    address: "Rr. Nënë Tereza, Qendër",
-    hours: "08:00 – 21:00",
-    phone: "+383 44 000 102",
-    mapsQuery: "Green Basket Market Pristina",
-    rating: "4.6",
-    description:
-      "Një zgjedhje e kujdesshme me produkte të freskëta për shtëpi.",
-  },
-  {
-    name: "Market 24",
-    category: "Markete dhe dyqane ushqimore",
-    type: "Mini-market",
-    address: "Rr. Bulevardi i Paqes, Lagjja e Re",
-    hours: "Hapur 24 orë",
-    phone: "+383 44 000 103",
-    mapsQuery: "Market 24 Pristina",
-    rating: "4.5",
-    description:
-      "Zgjidhje e shpejtë për blerjet e vona dhe nevojat e përditshme.",
-  },
-  {
-    name: "Bio Shtëpia",
-    category: "Markete dhe dyqane ushqimore",
-    type: "Ushqime bio",
     address: "Rr. Lidhja e Prizrenit, Qendër",
-    hours: "09:00 – 20:00",
-    phone: "+383 44 000 104",
-    mapsQuery: "Bio Shtëpia Pristina",
-    rating: "4.9",
+    hours: "08:00 – 22:30",
+    phone: "Numri i telefonit nuk është i publikuar",
+    mapsQuery: "https://maps.app.goo.gl/Bh1L1PLb4cZ9qJz56",
+    rating: "4.1",
     description:
-      "Produkte bio, ushqime të shëndetshme dhe zgjedhje pa gluten.",
+      "ETC është një market që ofron një shumëllojshmëri produktesh ushqimore, pijesh dhe artikujsh për amvisëri, duke u ofruar klientëve produkte të nevojshme për blerjet e përditshme.",
   },
   {
-    name: "City Grocer",
+    name: "KAM market",
     category: "Markete dhe dyqane ushqimore",
     type: "Supermarket",
-    address: "Rr. Garibaldi, Qendër",
-    hours: "07:00 – 23:00",
-    phone: "+383 44 000 105",
-    mapsQuery: "City Grocer Pristina",
-    rating: "4.7",
-    description:
-      "Supermarket me produkte për shtëpi, pije dhe artikuj të përditshëm.",
-  },
-  {
-    name: "Lagjja Market",
-    category: "Markete dhe dyqane ushqimore",
-    type: "Mini-market",
-    address: "Rr. B, Lagjja e Re",
-    hours: "06:30 – 22:30",
-    phone: "+383 44 000 106",
-    mapsQuery: "Lagjja Market Pristina",
-    rating: "4.6",
-    description:
-      "Blerje të shpejta pranë lagjes, me produkte të freskëta çdo ditë.",
-  },
-  {
-    name: "Fruta & Perime Plus",
-    category: "Markete dhe dyqane ushqimore",
-    type: "Fruta dhe perime",
-    address: "Rr. Agim Ramadani, Qendër",
-    hours: "07:00 – 20:00",
-    phone: "+383 44 000 107",
-    mapsQuery: "Fruta dhe Perime Plus Pristina",
-    rating: "4.8",
-    description:
-      "Fruta, perime dhe produkte sezonale nga furnizues lokalë.",
-  },
-  {
-    name: "Shporta Familjare",
-    category: "Markete dhe dyqane ushqimore",
-    type: "Dyqan ushqimor",
-    address: "Rr. Nazim Gafurri, Qendër",
-    hours: "08:00 – 21:30",
-    phone: "+383 44 000 108",
-    mapsQuery: "Shporta Familjare Pristina",
+    address: "Rr. Skenderbeu",
+    hours: "08:00 – 22:00",
+    phone: "Numri i telefonit nuk është i publikuar",
+    mapsQuery: "https://maps.app.goo.gl/zsuGr8bBCAyeGMTo9",
     rating: "4.5",
     description:
-      "Zgjedhje familjare për ushqime, produkte shtëpiake dhe higjienë.",
+      "KAM Market ofron produkte të ndryshme ushqimore, pije dhe artikuj për amvisëri, duke u bërë një vend praktik për blerjet e përditshme dhe nevojat e familjes.",
+  },
+  {
+    name: "Emona Center",
+    category: "Markete dhe dyqane ushqimore",
+    type: "Supermarket",
+    address: "Lidhja e Prizrenit",
+    hours: "08:00 – 23:00",
+    phone: "Numri i telefonit nuk është i publikuar",
+    mapsQuery: "https://maps.app.goo.gl/qYeBYxXTNKewQZhW7",
+    rating: "4.3",
+    description:
+      "Emona Center ofron një përzgjedhje të produkteve ushqimore, pijeve dhe artikujve të ndryshëm për shtëpi, duke ofruar mundësi praktike për blerjet e përditshme.",
+  },
+  {
+    name: "Eli-Ab Market",
+    category: "Markete dhe dyqane ushqimore",
+    type: "Market lokal",
+    address: "Rr. Fehmi Agani",
+    hours: "08:00 – 23:00",
+    phone: "Numri i telefonit nuk është i publikuar",
+    mapsQuery: "https://maps.app.goo.gl/7PUrWi86L9w3utzW7",
+    rating: "3.3",
+    description:
+      "Eli-Ab ofron produkte të ndryshme ushqimore dhe artikuj të nevojshëm për përditshmëri, duke u mundësuar banorëve të gjejnë lehtësisht produktet për nevojat e tyre të përditshme.",
+  },
+  {
+    name: "7 Vëllezerit Center",
+    category: "Markete dhe dyqane ushqimore",
+    type: "Dyqan dhe market",
+    address: "Rr. Hajredin Bajrami",
+    hours: "07:00 – 23:00",
+    phone: "+383 44 435 984",
+    mapsQuery: "https://maps.app.goo.gl/Uxm2Vujy2AtsS8Kw7",
+    rating: "4.0",
+    description:
+      "7 Vëllezërit ofron një shumëllojshmëri produktesh ushqimore, pijesh dhe artikujsh për shtëpi, duke u shërbyer banorëve për blerjet dhe nevojat e përditshme.",
   },
   {
     name: "Daily Stop",
@@ -214,7 +215,7 @@ const places: Place[] = [
     address: "Rr. Robert Doll, Arbëri",
     hours: "07:00 – 22:00",
     phone: "+383 44 000 109",
-    mapsQuery: "Daily Stop Pristina",
+    mapsQuery: "Daily Stop Pristina", 
     rating: "4.6",
     description:
       "Market praktik për nevojat e përditshme dhe blerjet në minutën e fundit.",
@@ -543,14 +544,18 @@ export default function PlacesPage() {
                   aria-label={`Harta për ${selectedPlace.name}`}
                 >
                   <div className="map-frame">
-                    <iframe
-                      title={`Harta e Google për ${selectedPlace.name}`}
-                      src={`https://www.google.com/maps?q=${encodeURIComponent(
-                        selectedPlace.mapsQuery
-                      )}&z=15&output=embed`}
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                    />
+                   <iframe
+                    title={`Harta e Google për ${selectedPlace.name}`}
+                      src={
+                      `https://maps.google.com/maps?q=${encodeURIComponent(
+      selectedPlace.mapsQuery.startsWith("http")
+        ? selectedPlace.address + ", Lipjan, Kosovo"
+        : selectedPlace.mapsQuery
+    )}&z=16&output=embed`
+  }
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+/>
                   </div>
 
                   <div className="map-details">
