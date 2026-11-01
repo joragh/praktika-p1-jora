@@ -1,5 +1,15 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Business owner CRUD
+
+- Visit `/auth` to register or log in as a business owner.
+- The owner dashboard at `/dashboard` can create, read, update, and delete businesses.
+- The free plan allows one business. The Premium monthly-plan demo unlocks multiple businesses and marks the owner's businesses as promoted in `/places`.
+- Account and business data are stored in MySQL. Import `database/city_guide.sql` in MySQL Workbench, then copy `.env.example` to `.env.local` and enter your MySQL credentials.
+- The database name is `city_guide`. The app reads businesses from the database on the `Places` page, so a newly added business is visible to every visitor.
+
+> The Premium button is a demo activation, not a real payment processor. A real subscription needs a payment provider and a server-side API; never store real passwords in browser storage in a production app.
+
 ## Getting Started
 
 First, run the development server:
