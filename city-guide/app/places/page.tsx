@@ -1014,7 +1014,7 @@ const places: Place[] = [
     mapsQuery: "https://maps.app.goo.gl/j1pUeTnNaN4iAmPq6",
     rating: "5.0",
     description: "Shtatorja e Heroit Haradin Bajramit është një monument kushtuar heroit kombëtar Haradin Bajramit.",
-  },
+  }
 ];
 
 function getPlacesForCategory(category: Category, ownerPlaces: Place[]) {

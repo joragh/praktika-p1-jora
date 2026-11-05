@@ -1,8 +1,8 @@
--- Import this file in MySQL Workbench: File > Open SQL Script, then click Execute.
+-- Run this once in MySQL Workbench if you prefer to create the database manually.
 CREATE DATABASE IF NOT EXISTS city_guide CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE city_guide;
 
-CREATE TABLE owners (
+CREATE TABLE IF NOT EXISTS owners (
   id CHAR(36) PRIMARY KEY,
   first_name VARCHAR(80) NOT NULL,
   last_name VARCHAR(80) NOT NULL,
@@ -12,7 +12,7 @@ CREATE TABLE owners (
   created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE businesses (
+CREATE TABLE IF NOT EXISTS businesses (
   id CHAR(36) PRIMARY KEY,
   owner_id CHAR(36) NOT NULL,
   name VARCHAR(160) NOT NULL,
@@ -29,18 +29,8 @@ CREATE TABLE businesses (
   CONSTRAINT fk_business_owner FOREIGN KEY (owner_id) REFERENCES owners(id) ON DELETE CASCADE
 );
 
-CREATE TABLE subscriptions (
-  id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-  owner_id CHAR(36) NOT NULL,
-  plan ENUM('premium') NOT NULL DEFAULT 'premium',
-  status ENUM('active','cancelled','expired') NOT NULL DEFAULT 'active',
-  monthly_price DECIMAL(10,2) NOT NULL,
-  currency CHAR(3) NOT NULL DEFAULT 'EUR',
-  starts_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  ends_at DATETIME NULL,
-  CONSTRAINT fk_subscription_owner FOREIGN KEY (owner_id) REFERENCES owners(id) ON DELETE CASCADE
-);
-
--- Helpful queries for the project presentation:
--- SELECT b.name, b.category, o.first_name, o.last_name, o.email, o.plan FROM businesses b JOIN owners o ON o.id = b.owner_id;
--- SELECT * FROM businesses WHERE is_promoted = TRUE;
+-- This shows every saved business together with its owner.
+SELECT b.name AS business_name, CONCAT(o.first_name, ' ', o.last_name) AS owner_name, o.email
+FROM businesses AS b
+JOIN owners AS o ON o.id = b.owner_id
+ORDER BY b.created_at DESC;

@@ -5,7 +5,7 @@ import { rows, run, sql } from "../../lib/db";
 
 type Business = { id: string; ownerId: string; name: string; category: string; mapsUrl: string; phone: string; address: string; description: string; hours: string; website: string; premium: boolean; createdAt: string };
 const fields = "'id', id, 'ownerId', owner_id, 'name', name, 'category', category, 'mapsUrl', google_maps_url, 'phone', phone, 'address', address, 'description', description, 'hours', COALESCE(opening_hours, ''), 'website', COALESCE(website, ''), 'premium', is_promoted, 'createdAt', created_at";
-const all = () => rows<Business>(`SELECT COALESCE(JSON_ARRAYAGG(JSON_OBJECT(${fields})), JSON_ARRAY()) FROM businesses ORDER BY created_at DESC`);
+const all = () => rows<Business>(`SELECT COALESCE(JSON_ARRAYAGG(business), JSON_ARRAY()) FROM (SELECT JSON_OBJECT(${fields}) AS business FROM businesses ORDER BY created_at DESC) AS ordered_businesses`);
 const valid = (body: Record<string, unknown>) => typeof body.name === "string" && typeof body.category === "string" && BUSINESS_CATEGORIES.includes(body.category as (typeof BUSINESS_CATEGORIES)[number]) && ["mapsUrl", "phone", "address", "description"].every((key) => typeof body[key] === "string" && body[key].trim());
 export async function GET() { return Response.json(await all()); }
 export async function POST(request: NextRequest) {

@@ -17,6 +17,11 @@
 /.next/
 /out/
 
+# Project-local MySQL data is generated automatically by npm run dev.
+/database/mysql-data/
+/database/mysql-server.log
+/database/next-dev.log
+
 # production
 /build
 
